@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="yauhenizhukovich@gmail.com">
+        <createTable tableName="city">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="info" type="VARCHAR(200)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="yauhenizhukovich@gmail.com">
+        <insert tableName="city">
+            <column name="name">Minsk</column>
+            <column name="info">Clean city. Its nice to walk in the center and climb the national library=)
+            </column>
+        </insert>
+    </changeSet>
+    <changeSet id="3" author="yauhenizhukovich@gmail.com">
+        <insert tableName="city">
+            <column name="name">Brest</column>
+            <column name="info">I recommend walking along Sovetskaya street, eating pizza, driving to the Brest fortress. And if you have time, you can also go to the Bialowieza forest.
+            </column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
